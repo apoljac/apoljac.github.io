@@ -1,0 +1,95 @@
+/* Resetting default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #223c33; /* Dark green background */
+  color: #ffffff; /* White text color */
+}
+
+/* Header styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.logo img {
+  max-width: 100px; /* Adjust size of logo as needed */
+  height: 50px;
+  margin: 10px
+}
+
+nav {
+  flex-grow: 1; /* Take up remaining space */
+  text-align: center; /* Center align navigation links */
+}
+
+nav ul {
+  list-style-type: none;
+  display: inline-flex; /* Display navigation links horizontally */
+  justify-content: center; /* Center align navigation links */
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #ffffff; /* White text color */
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #cccccc; /* Lighter grey color on hover */
+}
+
+/* Main Content Container */
+.container {
+  max-width: 800px; /* Adjust as needed */
+  margin: 0 auto; /* Center the container horizontally */
+  display: flex;
+  flex-direction: column; /* Align items vertically */
+  align-items: center; /* Center items horizontally */
+}
+
+/* Section styles */
+.section {
+  margin-bottom: 40px;
+  text-align: center; /* Center text horizontally */
+}
+
+.section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.section p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #ffffff; /* White text color */
+}
+
+/* Portfolio item styles */
+.portfolio-item {
+  margin-bottom: 20px;
+}
+
+.portfolio-item img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
