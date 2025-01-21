@@ -9,36 +9,50 @@ body {
   font-size: 18px;
 }
 
-/* Header */
 header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: transparent;
-  transition: padding 0.3s ease;
+  background: #1c2e4a; /* Gleiche Farben wie der Hintergrund */
+  padding: 3px 10px; /* Schmaleres Padding */
+}
+
+/* Abschnitte */
+section {
+  margin-bottom: 50px; /* Abstand zwischen den Abschnitten */
+  scroll-margin-top: 55px; /* Korrekt bei Navigation zu Ankern */
+}
+
+/* Überschrift "Gustav Hans" */
+#welcomeTitle {
+  font-size: 2.5rem; /* Größer als alle anderen Überschriften */
+  font-weight: 800; /* Noch fetter */
+  color: #d1cfc9; /* Beibehaltung der bestehenden Farbe */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* Tieferer Schatten für mehr Präsenz */
+  margin: 0;
+  text-align: center;
 }
 
 .header-content {
   display: flex;
-  justify-content: space-between; /* Platzierung: Logo links, Titel mittig, Menü rechts */
+  justify-content: space-between;
   align-items: center;
-  padding: 0 1rem;
 }
 
+/* Logo */
 .logo {
-  width: 50px; /* Breite des Logos */
-  height: auto;
+  width: 60px; /* Größere Breite für das Logo */
+  height: auto; /* Höhe wird proportional angepasst */
 }
 
 .header-content h1 {
   font-family: 'Montserrat', sans-serif;
-  font-size: 2.5rem;
+  font-size: 1.6rem; /* Kleinere Schriftgröße */
   font-weight: 700;
   color: #d1cfc9;
   margin: 0;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
-  transition: opacity 0.3s ease;
-  flex-grow: 1; /* Lässt den Titel flexibel Platz einnehmen */
+  flex-grow: 1;
   text-align: center;
 }
 
@@ -46,7 +60,7 @@ header {
   background: none;
   border: none;
   color: #bdc4d4;
-  font-size: 1.8rem;
+  font-size: 1.4rem; /* Kleinere Menü-Symbolgröße */
   cursor: pointer;
 }
 
@@ -56,24 +70,19 @@ header {
 
 /* Dropdown-Menü */
 .dropdown-menu {
-  display: none;
+  display: none; /* Standardmäßig unsichtbar */
   position: absolute;
-  top: 60px;
+  top: 45px;
   right: 10px;
   background: #1c2e4a;
   border: 1px solid #52677d;
   border-radius: 5px;
   width: 150px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-  opacity: 0;
-  transform: translateY(-10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.dropdown-menu.active {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
+  opacity: 0; /* Unsichtbar */
+  transform: translateY(-10px); /* Leicht nach oben verschoben */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Sanfter Übergang */
+  text-align: center; /* Text mittig ausgerichtet */
 }
 
 .dropdown-menu a {
@@ -81,18 +90,30 @@ header {
   padding: 10px;
   color: #bdc4d4;
   text-decoration: none;
+  font-size: 1rem;
 }
 
 .dropdown-menu a:hover {
   background: #bdc4d4;
   color: #1c2e4a;
+  border-radius: 3px;
 }
 
 /* Hauptbereich */
 main {
   padding: 20px;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 55px auto 0; /* Etwas weniger Abstand zum Header */
+}
+
+/* Abschnitte */
+section {
+  margin-bottom: 50px; /* Mehr Platz zwischen den Abschnitten */
+}
+
+/* Welcome-Bereich */
+#welcome {
+  margin-top: 10px; /* Reduzierter Abstand zum Header */
 }
 
 #welcome p {
@@ -101,6 +122,7 @@ main {
   color: #bdc4d4;
   margin-bottom: 30px;
 }
+
 
 /* Überschriften */
 h2 {
@@ -117,13 +139,13 @@ section p, section ul {
 
 /* Links in Abschnitten */
 section ul a {
-  color: #52677d; /* Sichtbare Farbe für Links wie GitHub und LinkedIn */
+  color: #52677d;
   text-decoration: none;
   font-weight: 600;
 }
 
 section ul a:hover {
-  color: #bdc4d4; /* Hellerer Hover-Effekt */
+  color: #bdc4d4;
   text-decoration: underline;
 }
 
@@ -155,44 +177,55 @@ footer a:hover {
   }
 
   .logo {
-    width: 40px; /* Kleineres Logo */
-    margin-bottom: 10px;
+    width: 30px; /* Kleineres Logo für Mobilgeräte */
+    margin-bottom: 5px;
   }
 
   .header-content h1 {
-    font-size: 2rem; /* Kleinerer Titel */
-    text-align: center;
+    font-size: 1.4rem; /* Kleinere Schriftgröße für den Titel */
   }
 
   .menu-toggle {
-    top: auto;
-    margin-top: 10px;
+    font-size: 1.3rem;
+    margin-top: 5px;
   }
 
   main {
     padding: 10px;
   }
 
+  section {
+    margin-bottom: 40px; /* Weniger Abstand auf kleinen Bildschirmen */
+  }
+
   section p, section ul {
-    font-size: 1rem; /* Kleinere Schrift für Mobilgeräte */
+    font-size: 1rem;
   }
 
   h2 {
-    font-size: 1.5rem; /* Kleinere Überschriften */
+    font-size: 1.5rem;
   }
 }
 
 /* Für Bildschirme kleiner als 480px */
 @media (max-width: 480px) {
   .header-content h1 {
-    font-size: 1.8rem;
+    font-size: 1.3rem; /* Noch kleinere Schriftgröße */
   }
 
   .menu-toggle {
-    font-size: 1.5rem; /* Kleinere Menü-Symbolgröße */
+    font-size: 1.2rem;
+  }
+
+  .logo {
+    width: 25px; /* Noch kleineres Logo */
   }
 
   section ul {
     padding-left: 20px;
+  }
+
+  section {
+    margin-bottom: 30px; /* Weniger Platz auf sehr kleinen Bildschirmen */
   }
 }

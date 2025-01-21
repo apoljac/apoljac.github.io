@@ -1,15 +1,43 @@
 const menuToggle = document.getElementById('menuToggle');
 const dropdownMenu = document.getElementById('dropdownMenu');
-const title = document.getElementById('welcomeTitle');
+// Event-Listener für das Menü
+const startseiteLink = document.querySelector('a[href="#"]');
 
-menuToggle.addEventListener('click', () => {
-    dropdownMenu.classList.toggle('active');
+startseiteLink.addEventListener('click', (event) => {
+  event.preventDefault(); // Verhindert das Standardverhalten des Links
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth', // Sanftes Scrollen
+  });
 });
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        title.style.opacity = '0'; // Titel ausblenden
-    } else {
-        title.style.opacity = '1'; // Titel wieder anzeigen
+// Menü anzeigen
+menuToggle.addEventListener('mouseenter', () => {
+  dropdownMenu.style.display = 'block';
+  dropdownMenu.style.opacity = '1';
+  dropdownMenu.style.transform = 'translateY(0)';
+});
+
+// Menü bleibt sichtbar, wenn Maus über dem Dropdown ist
+dropdownMenu.addEventListener('mouseenter', () => {
+  dropdownMenu.style.display = 'block';
+  dropdownMenu.style.opacity = '1';
+  dropdownMenu.style.transform = 'translateY(0)';
+});
+
+// Menü ausblenden, wenn die Maus den Bereich verlässt
+menuToggle.addEventListener('mouseleave', () => {
+  setTimeout(() => {
+    if (!dropdownMenu.matches(':hover')) {
+      dropdownMenu.style.display = 'none';
+      dropdownMenu.style.opacity = '0';
+      dropdownMenu.style.transform = 'translateY(-10px)';
     }
+  }, 200); // Kurzer Delay, um sicherzustellen, dass die Maus nicht zwischen Symbol und Menü springt
+});
+
+dropdownMenu.addEventListener('mouseleave', () => {
+  dropdownMenu.style.display = 'none';
+  dropdownMenu.style.opacity = '0';
+  dropdownMenu.style.transform = 'translateY(-10px)';
 });
